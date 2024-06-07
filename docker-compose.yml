@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: nginx_container
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/usr/share/nginx/html
+      - ./logs:/var/log/nginx
+
